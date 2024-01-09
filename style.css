@@ -11,6 +11,7 @@ body {
     min-height: 100vh;
 }
 
+
 #exerciseText, #userInput, #results, #attemptDetails, table {
     max-width: 800px; /* Responsive width */
     width: 90%; /* Responsive width */
@@ -78,6 +79,27 @@ button:hover {
 
 #userInput.error-bg {
     background-color: #ffcccc; /* Light red background */
+}
+
+.mistake-highlight {  
+    color: #ff0000; /*Red color for mistakes*/
+    border-bottom: 2px solid #ff0000; /* Underline mistakes */
+    font-weight: bold; /* Make it bold */
+}  
+
+.feedback-panel {
+    background-color: #e0e0e0; /* Light grey background */
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Progress bar styles */
+.progress-bar {
+    height: 20px;
+    background-color: #4caf50;
+    border-radius: 5px;
 }
 
 table {

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <nav>
+        <button id="wordsMode">Words</button>
+        <button id="lettersMode">Letters</button>
+    </nav>
     <title>Typing Practice</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -10,10 +14,15 @@
     <h1>Typing Practice</h1>
     <div id="exerciseText"></div>
     <input type="text" id="userInput" autocomplete="off" />
+    <div id="detailedFeedback"></div>
     <div id="results"></div>
+
     <button id="restartButton">Restart</button>
+
+    
       
     <div id="attemptDetails"></div>
     <script src="script.js"></script>
 </body>
 </html>
+
