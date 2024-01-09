@@ -31,7 +31,7 @@
                         "trumpet", "flute", "saxophone", "drum", "dance", "theatre", "cinema", 
                         "photography", "painting", "sculpture", "architecture", "design", "fashion", 
                         "style", "elegance", "beauty", "nature", "environment", "ecology", "sustainability", 
-                        "conservation", "biodiversity", "wildlife", "flora", "fauna", "landscape", "phone", "coffee"
+                        "conservation", "biodiversity", "wildlife", "flora", "fauna", "landscape", "phone", "coffee", "master"
                     ];
                     
 
