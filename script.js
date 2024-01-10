@@ -78,21 +78,30 @@
                         }
                     }
                     function getRandomLetters(numWords) {
-                        let letterToPractice = analyzeMistakes(); // Get the most mistaken letter
                         let lettersArray = 'abcdefghijklmnopqrstuvwxyz'.split(''); // Array of all letters
                         let letterCombinations = [];
                     
                         for (let i = 0; i < numWords; i++) {
                             let word = '';
                             for (let j = 0; j < 5; j++) { // Assuming each "word" is 5 letters long
-                                // Randomly decide whether to use the letter to practice or a random letter
-                                word += Math.random() < 0.7 ? letterToPractice : lettersArray[Math.floor(Math.random() * lettersArray.length)];
+                                word += lettersArray[Math.floor(Math.random() * lettersArray.length)];
                             }
                             letterCombinations.push(word);
+                    
+                            // Add a space after each word except the last one
+                            if (i < numWords - 1) {
+                                letterCombinations.push(' ');
+                            }
                         }
                     
-                        return letterCombinations.join(' ');
+                        // Ensure the first character is not a space
+                        if (letterCombinations.length > 0 && letterCombinations[0] === ' ') {
+                            letterCombinations.shift();
+                        }
+                    
+                        return letterCombinations.join('');
                     }
+                    
                     
                 
                     function getRandomWords(numWords) {

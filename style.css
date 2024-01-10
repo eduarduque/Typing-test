@@ -1,101 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Improved font */
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 20px;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #FAFAFA;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    color: #333;
 }
 
-
 #exerciseText, #userInput, #results, #attemptDetails, table {
-    max-width: 800px; /* Responsive width */
-    width: 90%; /* Responsive width */
-    margin: 10px auto; /* Centered alignment */
+    max-width: 800px;
+    width: 90%;
+    margin: 10px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 #exerciseText {
     margin-bottom: 20px;
-    border: 2px solid #ddd;
+    background-color: #FFF;
     padding: 20px;
-    font-size: 22px; /* Larger font size */
-    color: #333;
-    background-color: #f9f9f9;
+    font-size: 24px;
     text-align: left;
-    border-radius: 10px; /* Rounded corners */
+    border: none;
 }
 
 #userInput {
     padding: 15px;
     margin-bottom: 20px;
-    border: 2px solid #ddd;
-    font-size: 20px; /* Larger font size */
+    border: 2px solid #4CAF50;
+    font-size: 20px;
     border-radius: 4px;
 }
 
 #results {
-    font-size: 20px; /* Larger font size */
-    color: #006400;
-    font-weight: bold; /* Bold font */
+    font-size: 20px;
+    color: #2E7D32;
+    font-weight: 600;
 }
 
-#restartButton {
-    margin: 20px 0; /* Increased margin */
-    padding: 12px 20px; /* Larger padding */
-    font-size: 18px; /* Larger font size */
-}
-
-#attemptDetails {
-    padding: 10px;
-    border-radius: 10px; /* Rounded corners */
-    background-color: #f9f9f9; /* Background color */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Box shadow for depth */
-}
-
-button {
-    padding: 12px 20px;
+#restartButton, #wordsMode, #lettersMode {
+    margin: 20px 0;
+    padding: 15px 25px;
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 18px; /* Larger font size */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Box shadow for buttons */
+    font-size: 18px;
     transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover {
-    background-color: #45a049;
-    transform: scale(1.1); /* Slightly larger scale */
+#restartButton:hover , #wordsMode:hover, #lettersMode:hover{
+    background-color: #388E3C;
+    transform: scale(1.05);
 }
 
 #userInput.error, #userInput.error-bg {
-    border-color: red !important;
-}
-
-#userInput.error-bg {
-    background-color: #ffcccc; /* Light red background */
+    border-color: #D32F2F !important;
+    background-color: #FFEBEE;
 }
 
 .mistake-highlight {  
-    color: #ff0000; /*Red color for mistakes*/
-    border-bottom: 2px solid #ff0000; /* Underline mistakes */
-    font-weight: bold; /* Make it bold */
+    color: #D32F2F;
+    border-bottom: 2px solid #D32F2F;
+    font-weight: bold;
 }  
 
 .feedback-panel {
-    background-color: #e0e0e0; /* Light grey background */
+    background-color: #ECEFF1;
     border-radius: 8px;
     padding: 10px;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Progress bar styles */
 .progress-bar {
     height: 20px;
     background-color: #4caf50;
@@ -104,12 +90,12 @@ button:hover {
 
 table {
     border-collapse: collapse;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Box shadow for table */
+    margin-top: 20px;
 }
 
 th, td {
     border: 1px solid #ddd;
-    padding: 10px; /* Increased padding */
+    padding: 10px;
     text-align: left;
 }
 
@@ -120,4 +106,15 @@ th {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #exerciseText, #userInput, #results, #attemptDetails, table {
+        width: 100%;
+    }
 }
