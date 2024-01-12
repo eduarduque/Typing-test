@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <nav>
-        <button id="wordsMode">Words</button>
-        <button id="lettersMode">Letters</button>
-        <button id="numbersMode">Numbers</button> <!-- New button for Numbers mode -->
-    </nav>
     <title>Typing Practice</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    
     <h1>Typing Practice</h1>
+   
+    <select id="colorThemeSelector">
+        <option value="fluorescentGreen">Green</option>
+        <option value="fluorescentBlue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="pink">Pink</option>
+        <option value="purple">Purple</option>
+        <option value="white">White</option>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+    </select>
+    
+    <nav>
+        <button id="wordsMode">Words</button>
+        <button id="lettersMode">Letters</button>
+        <button id="numbersMode">Numbers</button>
+    </nav>
+
     <div id="exerciseText"></div>
     <input type="text" id="userInput" autocomplete="off" />
     <div id="detailedFeedback"></div>
@@ -20,7 +32,10 @@
 
     <button id="restartButton">Restart</button>
 
-    <div id="attemptDetails"></div>
+    <div id="attemptDetails">
+        <!-- Placeholder for the attempts table, if it's not dynamically created -->
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

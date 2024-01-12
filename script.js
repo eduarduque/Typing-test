@@ -2,7 +2,6 @@
                     document.getElementById('wordsMode').addEventListener('click', () => setMode('words'));
                     document.getElementById('lettersMode').addEventListener('click', () => setMode('letters'));
                     document.getElementById('numbersMode').addEventListener('click', () => setMode('numbers')); // Numbers mode event listener
-                        
 
                     // DOM elements
                     const exerciseTextElement = document.getElementById('exerciseText');
@@ -10,8 +9,11 @@
                     const results = document.getElementById('results');
                     const restartButton = document.getElementById('restartButton');
                     const attemptDetailsElement = document.getElementById('attemptDetails');
+                    const colorThemeSelector = document.getElementById('colorThemeSelector'); // Color theme selector
+
                     let currentMistakeCounter = {}; // Object to track mistakes for the current attempt
-                    let mode = 'words';
+                    let mode = 'words'; // Set default mode to 'words'
+                    
 
                     // Variables
                     let startTime, endTime;
@@ -168,34 +170,53 @@
                     
                     
                     restartButton.addEventListener('click', startExercise);
-                    
-                    userInput.addEventListener('input', () => {
-                        const typedText = userInput.value;
-                        let remainingText = originalExerciseText.substring(typedText.length);
-                    
-                        if (originalExerciseText.startsWith(typedText)) {
-                            userInput.classList.remove('error-bg'); // Remove error background
-                            exerciseTextElement.textContent = remainingText;
-                    
-                            if (typedText.length === originalExerciseText.length) {
-                                completeExercise(); // Call this when the exercise is completed
-                                userInput.disabled = true;
-                            }
-                        } else {
-                            // Mistake made
-                            let mistakeLetter = typedText[typedText.length - 1];
-                            mistakeCounter[mistakeLetter] = (mistakeCounter[mistakeLetter] || 0) + 1;
-                            currentMistakeCounter[mistakeLetter] = (currentMistakeCounter[mistakeLetter] || 0) + 1;
-                            userInput.classList.add('error-bg');
-                            userInput.value = typedText.slice(0, -1); // Remove the last character
-                            setTimeout(() => { userInput.classList.remove('error-bg'); }, 500);
-                            provideDetailedFeedback(typedText, originalExerciseText);
-                        }
+
+                    colorThemeSelector.addEventListener('change', (event) => {
+                        changeTheme(event.target.value);
                     });
                     
                     
+                    // Event listener for user input
+                    userInput.addEventListener('input', () => {
+                    const typedText = userInput.value;
+                    let remainingText = originalExerciseText.substring(typedText.length);
+
+                    
+
+                    if (originalExerciseText.startsWith(typedText)) {
+                        userInput.classList.remove('error-bg'); // Remove error background
+                        exerciseTextElement.textContent = remainingText;
+
+                        if (typedText.length === originalExerciseText.length) {
+                            completeExercise(); // Call this when the exercise is completed
+                            userInput.disabled = true;
+                            // Do not show detailed feedback after completion
+                        } else {
+                            // While typing, show detailed feedback
+                            provideDetailedFeedback(typedText, originalExerciseText);
+                        }
+                    } else {
+                        // Mistake made
+                        let mistakeLetter = typedText[typedText.length - 1];
+                        mistakeCounter[mistakeLetter] = (mistakeCounter[mistakeLetter] || 0) + 1;
+                        currentMistakeCounter[mistakeLetter] = (currentMistakeCounter[mistakeLetter] || 0) + 1;
+                        userInput.classList.add('error-bg');
+                        userInput.value = typedText.slice(0, -1); // Remove the last character
+                        setTimeout(() => { userInput.classList.remove('error-bg'); }, 500);
+                        // Show detailed feedback for the mistake
+                        provideDetailedFeedback(typedText, originalExerciseText);
+                    }
+                    
+                });
+
+        // Event listener for color theme selector
                     startExercise();
                 });
+
+
+                function changeTheme(themeName) {
+                    document.body.className = themeName; // Set the class name on the body element
+                }
                 
                 function calculateWPM(charCount, timeSeconds) {
                     const words = charCount / 5; // A word is typically five characters long
@@ -203,3 +224,4 @@
                 }
                 
                 
+        

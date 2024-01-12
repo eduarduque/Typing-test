@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
+
 body {
     font-family: 'Roboto Mono', monospace;
     margin: 0;
@@ -11,7 +12,28 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    color: #0F0; /* Bright green text */
+    color: var(--text-color); 
+}
+
+select#colorThemeSelector {
+    position: absolute;  /* Positioning the element absolutely */
+    top: 20px;           /* 20px from the top of the parent container */
+    left: 20px;          /* 20px from the left of the parent container */
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF(255, 255, 255);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+
+/* Style for the dropdown options */
+select#colorThemeSelector option {
+    background-color: #262626; /* Slightly lighter color for options */
+    color: #FFFFFF; /* Light color for the text */
+    margin-left: 1000px;
 }
 
 #exerciseText, #userInput, #results, #attemptDetails, table {
@@ -21,6 +43,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 8px;
     overflow: hidden;
+    color: var(--text-color);
 }
 
 #exerciseText {
@@ -30,22 +53,24 @@ body {
     font-size: 24px;
     text-align: left;
     border: none;
-    color: #0F0; /* Bright text */
+    color: var(--text-color); /* Bright text */
 }
 
 #userInput {
     padding: 15px;
     margin-bottom: 20px;
-    border: 2px solid #4CAF50;
+    border-width: 2px;
+    border-style: solid;
     font-size: 20px;
     border-radius: 4px;
     background-color: #1C1C1C; /* Darker element backgrounds */
-    color: #0F0; /* Bright text */
+    color: var(--text-color);  /* Bright text */
 }
 
 #results {
+    padding: 15px;
     font-size: 20px;
-    color: #2E7D32;
+    color: var(--text-color);
     font-weight: 600;
     background-color: #1C1C1C; /* Darker element backgrounds */
 }
@@ -53,7 +78,7 @@ body {
 #restartButton, #wordsMode, #lettersMode,  #numbersMode{
     margin: 20px 0;
     padding: 15px 25px;
-    background-color: #4CAF50;
+    background-color: var(--text-color);
     color: white;
     border: none;
     cursor: pointer;
@@ -61,7 +86,9 @@ body {
     font-size: 18px;
     transition: background-color 0.3s, transform 0.2s;
     background-color: #1C1C1C; /* Darker element backgrounds */
-    border: 2px solid #0F0; /* Bright borders */
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--text-color); /* Bright borders */
 }
 
 #restartButton:hover , #wordsMode:hover, #lettersMode:hover, #numbersMode:hover {
@@ -102,13 +129,14 @@ th, td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
-    border: 1px solid #0F0; /* Bright borders */
-    color: #0F0; /* Bright text */
+    border-width: 1px;
+    border-style: solid; /* Bright borders */
+    color: var(--text-color);  /* Bright text */
 }
 
 th {
     background-color: #1C1C1C; /* Dark header backgrounds */
-    color: #0F0; /* Bright text */
+    color: var(--text-color); ; /* Bright text */
 }
 
 tr:nth-child(even) {
@@ -125,3 +153,53 @@ tr:nth-child(even) {
         width: 100%;
     }
 }
+
+:root {
+    --main-color: #ffffff; /* Default color */
+    --text-color: #0F0; /* Default text color */
+}
+
+body.fluorescentGreen {
+    --main-color: #39ff14; /* Fluorescent Green */
+}
+
+body.fluorescentBlue {
+    --main-color: #00ffff; /* Fluorescent Blue */
+}
+
+body.yellow {
+    --main-color: #ffff00; /* Yellow */
+}
+
+body.pink {
+    --main-color: #ff69b4; /* Pink */
+}
+
+body.purple {
+    --main-color: #800080; /* Purple */
+}
+
+body.white {
+    --main-color: #ffffff; /* White */
+}
+body.black {
+    --main-color: #121212; /* Black */
+}
+body.red {
+    --main-color: #ff0000; /* Red */
+}
+
+
+/* Apply main color */
+.someElement {
+    background-color: var(--main-color);
+}
+
+.fluorescentGreen { background-color: #39ff14; }
+.fluorescentBlue  { background-color: #00ffff; }
+.yellow           { background-color: #ffff00; }
+.pink             { background-color: #f43594; }
+.purple           { background-color: #ff00ffc2; }
+.white            { background-color: #ffffff; }
+.black            { background-color: #121212; }
+.red              { background-color: #ff0000; }
