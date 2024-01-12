@@ -161,33 +161,58 @@ tr:nth-child(even) {
 
 body.fluorescentGreen {
     --main-color: #39ff14; /* Fluorescent Green */
+    --text-color: #0F0;
 }
 
 body.fluorescentBlue {
     --main-color: #00ffff; /* Fluorescent Blue */
+    --text-color: #0F0;
 }
 
 body.yellow {
     --main-color: #ffff00; /* Yellow */
+    --text-color: #0F0;
 }
 
 body.pink {
     --main-color: #ff69b4; /* Pink */
+    --text-color: #0F0;
 }
 
 body.purple {
     --main-color: #800080; /* Purple */
+    --text-color: #0F0;
 }
 
 body.white {
     --main-color: #ffffff; /* White */
+    --text-color: #0F0;
 }
 body.black {
     --main-color: #121212; /* Black */
+    --text-color: #0F0;
 }
 body.red {
     --main-color: #ff0000; /* Red */
+    --text-color: #0F0;
 }
+
+
+
+
+.twhite {
+    --text-color: #ffffff; /* Example light green color */
+}
+
+.tgreen {
+    --text-color: #ff0000; /* Example dark green color */
+}
+
+.tred {
+    --text-color: #0F0; /* Example lime green color */
+}
+
+/* Continue for other options... */
 
 
 /* Apply main color */

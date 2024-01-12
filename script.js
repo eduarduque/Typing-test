@@ -2,7 +2,7 @@
                     document.getElementById('wordsMode').addEventListener('click', () => setMode('words'));
                     document.getElementById('lettersMode').addEventListener('click', () => setMode('letters'));
                     document.getElementById('numbersMode').addEventListener('click', () => setMode('numbers')); // Numbers mode event listener
-
+                    document.getElementById('textColorSelector').addEventListener('change', (event) => {changeTextColor(event.target.value);});
                     // DOM elements
                     const exerciseTextElement = document.getElementById('exerciseText');
                     const userInput = document.getElementById('userInput');
@@ -71,6 +71,13 @@
                             }
                         }
                         return letterToPractice;
+                    }
+
+                    function changeTextColor(colorClassName) {
+                        // Remove previous text color class if necessary
+                        // Apply the new text color class
+                        document.body.classList.remove('lightGreen', 'darkGreen', 'limeGreen'); // List all classes here
+                        document.body.classList.add(colorClassName);
                     }
 
                     function getRandomContent(numWords) {
