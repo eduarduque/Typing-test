@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     margin: 0;
     padding: 20px;
     text-align: center;
-    background-color: #FAFAFA;
+    background-color: #121212; /* Dark background */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    color: #333;
+    color: #0F0; /* Bright green text */
 }
 
 #exerciseText, #userInput, #results, #attemptDetails, table {
@@ -25,11 +25,12 @@ body {
 
 #exerciseText {
     margin-bottom: 20px;
-    background-color: #FFF;
+    background-color: #1C1C1C; /* Darker element backgrounds */
     padding: 20px;
     font-size: 24px;
     text-align: left;
     border: none;
+    color: #0F0; /* Bright text */
 }
 
 #userInput {
@@ -38,15 +39,18 @@ body {
     border: 2px solid #4CAF50;
     font-size: 20px;
     border-radius: 4px;
+    background-color: #1C1C1C; /* Darker element backgrounds */
+    color: #0F0; /* Bright text */
 }
 
 #results {
     font-size: 20px;
     color: #2E7D32;
     font-weight: 600;
+    background-color: #1C1C1C; /* Darker element backgrounds */
 }
 
-#restartButton, #wordsMode, #lettersMode {
+#restartButton, #wordsMode, #lettersMode,  #numbersMode{
     margin: 20px 0;
     padding: 15px 25px;
     background-color: #4CAF50;
@@ -56,22 +60,23 @@ body {
     border-radius: 5px;
     font-size: 18px;
     transition: background-color 0.3s, transform 0.2s;
+    background-color: #1C1C1C; /* Darker element backgrounds */
+    border: 2px solid #0F0; /* Bright borders */
 }
 
-#restartButton:hover , #wordsMode:hover, #lettersMode:hover{
+#restartButton:hover , #wordsMode:hover, #lettersMode:hover, #numbersMode:hover {
     background-color: #388E3C;
     transform: scale(1.05);
 }
 
 #userInput.error, #userInput.error-bg {
     border-color: #D32F2F !important;
-    background-color: #FFEBEE;
+    background-color: #3E0C0C; /* Dark red background for errors */
 }
 
 .mistake-highlight {  
-    color: #D32F2F;
+    color: #D32F2F; /* Red highlights for mistakes */
     border-bottom: 2px solid #D32F2F;
-    font-weight: bold;
 }  
 
 .feedback-panel {
@@ -97,15 +102,17 @@ th, td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
+    border: 1px solid #0F0; /* Bright borders */
+    color: #0F0; /* Bright text */
 }
 
 th {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #1C1C1C; /* Dark header backgrounds */
+    color: #0F0; /* Bright text */
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #262626; /* Slightly lighter row background for contrast */
 }
 
 /* Responsive design for smaller screens */

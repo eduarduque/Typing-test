@@ -1,6 +1,7 @@
                     document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('wordsMode').addEventListener('click', () => setMode('words'));
                     document.getElementById('lettersMode').addEventListener('click', () => setMode('letters'));
+                    document.getElementById('numbersMode').addEventListener('click', () => setMode('numbers')); // Numbers mode event listener
                         
 
                     // DOM elements
@@ -71,10 +72,13 @@
                     }
 
                     function getRandomContent(numWords) {
-                        if (mode === 'letters') {
-                            return getRandomLetters(numWords); // Implement this function
-                        } else {
-                            return getRandomWords(numWords);
+                        switch (mode) {
+                            case 'letters':
+                                return getRandomLetters(numWords);
+                            case 'numbers':
+                                return getRandomNumbers(numWords); // Numbers mode function for generating numbers
+                            default:
+                                return getRandomWords(numWords);
                         }
                     }
                     function getRandomLetters(numWords) {
@@ -102,6 +106,16 @@
                         return letterCombinations.join('');
                     }
                     
+                    function getRandomNumbers(numWords) {
+                        let numberString = '';
+                        for (let i = 0; i < numWords * 5; i++) { // Assuming each "word" length is 5
+                            numberString += Math.floor(Math.random() * 10).toString(); // Random digit from 0 to 9
+                            if (i % 5 === 4 && i < numWords * 5 - 1) {
+                                numberString += ' '; // Add space every 5 digits, except at the end
+                            }
+                        }
+                        return numberString;
+                    }
                     
                 
                     function getRandomWords(numWords) {
