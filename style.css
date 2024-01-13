@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
-    background-color: #121212; /* Dark background */
+    background-color: var(--main-color); /* Default to dark background */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,11 +26,35 @@ select#colorThemeSelector {
     border-radius: 4px;
     margin-bottom: 20px;
     font-size: 16px;
+    
 }
 
 
 /* Style for the dropdown options */
 select#colorThemeSelector option {
+    
+    background-color: #262626; /* Slightly lighter color for options */
+    color: #FFFFFF; /* Light color for the text */
+    margin-left: 1000px;
+}
+
+select#textColorSelector {
+   
+    position: absolute;  /* Positioning the element absolutely */
+    top: 20px;           /* 20px from the top of the parent container */
+    left: 1240px;          /* 20px from the left of the parent container */
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF(255, 255, 255);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+
+/* Style for the dropdown options */
+select#textColorSelector option {
     background-color: #262626; /* Slightly lighter color for options */
     color: #FFFFFF; /* Light color for the text */
     margin-left: 1000px;
@@ -153,78 +177,30 @@ tr:nth-child(even) {
         width: 100%;
     }
 }
-
-:root {
-    --main-color: #ffffff; /* Default color */
-    --text-color: #0F0; /* Default text color */
-}
-
-body.fluorescentGreen {
-    --main-color: #39ff14; /* Fluorescent Green */
-    --text-color: #0F0;
-}
-
-body.fluorescentBlue {
-    --main-color: #00ffff; /* Fluorescent Blue */
-    --text-color: #0F0;
-}
-
-body.yellow {
-    --main-color: #ffff00; /* Yellow */
-    --text-color: #0F0;
-}
-
-body.pink {
-    --main-color: #ff69b4; /* Pink */
-    --text-color: #0F0;
-}
-
-body.purple {
-    --main-color: #800080; /* Purple */
-    --text-color: #0F0;
-}
-
-body.white {
-    --main-color: #ffffff; /* White */
-    --text-color: #0F0;
-}
-body.black {
-    --main-color: #121212; /* Black */
-    --text-color: #0F0;
-}
-body.red {
-    --main-color: #ff0000; /* Red */
-    --text-color: #0F0;
-}
-
-
-
-
+    :root {
+        --white: #ffffff; /* White */
+        --black: #121212; /* Black */
+        --main-color: var(--black); /* Default background color */
+        --text-color: #0F0; /* Default text color */
+    }
+    
 .twhite {
     --text-color: #ffffff; /* Example light green color */
 }
 
-.tgreen {
+.tred {
     --text-color: #ff0000; /* Example dark green color */
 }
 
-.tred {
+.tgreen {
     --text-color: #0F0; /* Example lime green color */
 }
 
-/* Continue for other options... */
 
 
-/* Apply main color */
-.someElement {
-    background-color: var(--main-color);
+.white {
+    --main-color: #ffffff; /* White */
 }
-
-.fluorescentGreen { background-color: #39ff14; }
-.fluorescentBlue  { background-color: #00ffff; }
-.yellow           { background-color: #ffff00; }
-.pink             { background-color: #f43594; }
-.purple           { background-color: #ff00ffc2; }
-.white            { background-color: #ffffff; }
-.black            { background-color: #121212; }
-.red              { background-color: #ff0000; }
+.black {
+    --main-color: #121212; /* Black */
+}

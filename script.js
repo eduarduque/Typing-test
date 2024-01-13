@@ -2,7 +2,10 @@
                     document.getElementById('wordsMode').addEventListener('click', () => setMode('words'));
                     document.getElementById('lettersMode').addEventListener('click', () => setMode('letters'));
                     document.getElementById('numbersMode').addEventListener('click', () => setMode('numbers')); // Numbers mode event listener
+                    document.getElementById('colorThemeSelector').addEventListener('change', (event) => {changeTheme(event.target.value);});
                     document.getElementById('textColorSelector').addEventListener('change', (event) => {changeTextColor(event.target.value);});
+                    
+
                     // DOM elements
                     const exerciseTextElement = document.getElementById('exerciseText');
                     const userInput = document.getElementById('userInput');
@@ -74,11 +77,13 @@
                     }
 
                     function changeTextColor(colorClassName) {
-                        // Remove previous text color class if necessary
-                        // Apply the new text color class
-                        document.body.classList.remove('lightGreen', 'darkGreen', 'limeGreen'); // List all classes here
+                        // Remove previous text color classes
+                        document.body.classList.remove('twhite', 'tgreen', 'tred'); // List all text color classes here
+                    
+                        // Add the new text color class
                         document.body.classList.add(colorClassName);
                     }
+                    
 
                     function getRandomContent(numWords) {
                         switch (mode) {
@@ -220,10 +225,23 @@
                     startExercise();
                 });
 
-
-                function changeTheme(themeName) {
-                    document.body.className = themeName; // Set the class name on the body element
+                function changeTheme(themeColor) {
+                    // Define a mapping between the value and the corresponding class name
+                    const themeClassMap = {
+                        'white': 'white',
+                        'black': 'black',
+                        // Add other color mappings here
+                    };
+                
+                    // Remove all theme classes
+                    document.body.classList.remove('white', 'black'); // List all theme classes here
+                
+                    // Add the selected theme class
+                    if (themeClassMap[themeColor]) {
+                        document.body.classList.add(themeClassMap[themeColor]);
+                    }
                 }
+                
                 
                 function calculateWPM(charCount, timeSeconds) {
                     const words = charCount / 5; // A word is typically five characters long
