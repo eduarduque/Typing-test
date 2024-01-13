@@ -116,7 +116,7 @@ select#textColorSelector option {
 }
 
 #restartButton:hover , #wordsMode:hover, #lettersMode:hover, #numbersMode:hover {
-    background-color: #388E3C;
+    background-color: #6e6c6c6b;
     transform: scale(1.05);
 }
 
@@ -194,6 +194,12 @@ tr:nth-child(even) {
 
 .tgreen {
     --text-color: #0F0; /* Example lime green color */
+}
+.tblue {
+    --text-color: #00f; /* Example blue color */
+}
+.tyellow {
+    --text-color: #ff0; /* Example yellow color */
 }
 
 

@@ -78,11 +78,12 @@
 
                     function changeTextColor(colorClassName) {
                         // Remove previous text color classes
-                        document.body.classList.remove('twhite', 'tgreen', 'tred'); // List all text color classes here
+                        document.body.classList.remove('twhite', 'tgreen', 'tred', 'tblue', 'tyellow'); // Include all text color classes here
                     
                         // Add the new text color class
                         document.body.classList.add(colorClassName);
                     }
+                    
                     
 
                     function getRandomContent(numWords) {
