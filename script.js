@@ -83,6 +83,14 @@
                         // Add the new text color class
                         document.body.classList.add(colorClassName);
                     }
+
+                    function updateProgressBar() {
+                        const typedTextLength = userInput.value.length;
+                        const totalTextLength = originalExerciseText.length;
+                        const progressPercentage = (typedTextLength / totalTextLength) * 100;
+                        document.getElementById('progressBar').style.width = progressPercentage + '%';
+                    }
+                    
                     
                     
 
@@ -179,6 +187,8 @@
                         // Clear the previous results and detailed feedback
                         results.textContent = '';
                         document.getElementById('detailedFeedback').innerHTML = '';
+                        document.getElementById('progressBar').style.width = '0%'; // Reset progress bar
+
                     }
                     
                     
@@ -193,8 +203,6 @@
                     userInput.addEventListener('input', () => {
                     const typedText = userInput.value;
                     let remainingText = originalExerciseText.substring(typedText.length);
-
-                    
 
                     if (originalExerciseText.startsWith(typedText)) {
                         userInput.classList.remove('error-bg'); // Remove error background
@@ -219,7 +227,7 @@
                         // Show detailed feedback for the mistake
                         provideDetailedFeedback(typedText, originalExerciseText);
                     }
-                    
+                    updateProgressBar(); 
                 });
 
         // Event listener for color theme selector
