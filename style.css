@@ -38,18 +38,23 @@ select#colorThemeSelector option {
     margin-left: 1000px;
 }
 
-select#textColorSelector {
-    position: absolute;  /* Positioning the element absolutely */
-    top: 20px;           /* 20px from the top of the parent container */
-    right: 20px;         /* 20px from the right of the parent container */
+.parent-container {
+    position: relative; /* Ensure the parent container has relative positioning */
+}
+
+#textColorSelector {
+    position: absolute; /* Positioning the element absolutely */
+    top: 20px;          /* 20px from the top of the parent container */
+    right: 20px;        /* 20px from the right of the parent container */
     background-color: #1C1C1C;
     color: #FFFFFF;
-    border: 2px solid #FFFFFF(255, 255, 255);
+    border: 2px solid #FFFFFF;
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 20px;
     font-size: 16px;
 }
+
 
 
 /* Style for the dropdown options */
