@@ -39,10 +39,9 @@ select#colorThemeSelector option {
 }
 
 select#textColorSelector {
-   
     position: absolute;  /* Positioning the element absolutely */
     top: 20px;           /* 20px from the top of the parent container */
-    left: 1240px;          /* 20px from the left of the parent container */
+    right: 20px;         /* 20px from the right of the parent container */
     background-color: #1C1C1C;
     color: #FFFFFF;
     border: 2px solid #FFFFFF(255, 255, 255);
@@ -213,8 +212,8 @@ tr:nth-child(even) {
 
 
 
-.white {
-    --main-color: #ffffff; /* White */
+.grey {
+    --main-color: #9b9999; /* White */
 }
 .black {
     --main-color: #121212; /* Black */

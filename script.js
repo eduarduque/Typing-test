@@ -237,13 +237,13 @@
                 function changeTheme(themeColor) {
                     // Define a mapping between the value and the corresponding class name
                     const themeClassMap = {
-                        'white': 'white',
+                        'grey': 'grey',
                         'black': 'black',
                         // Add other color mappings here
                     };
                 
                     // Remove all theme classes
-                    document.body.classList.remove('white', 'black'); // List all theme classes here
+                    document.body.classList.remove('grey', 'black'); // List all theme classes here
                 
                     // Add the selected theme class
                     if (themeClassMap[themeColor]) {
